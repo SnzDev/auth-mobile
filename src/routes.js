@@ -1,5 +1,6 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const AppStack = createStackNavigator();
 
@@ -9,11 +10,11 @@ import SignUp from './pages/SignUp';
 
 export default function Routes(){
     return(
-        <NavigatorComponent>
-            <AppStack.Navigator>
-                <AppStack.Screen component={SignIn}/>
-                <AppStack.Screen component={SignUp}/>
+        <NavigationContainer>
+            <AppStack.Navigator screenOptions={{headerShown: false}}>
+                <AppStack.Screen name="SignIn" component={SignIn}/>
+                <AppStack.Screen name="SignUp" component={SignUp}/>
             </AppStack.Navigator>
-        </NavigatorComponent>
+        </NavigationContainer>
     );
 }
