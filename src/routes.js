@@ -8,12 +8,12 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
 
-export default function Routes(){
-    return(
+export default function Routes() {
+    return (
         <NavigationContainer>
-            <AppStack.Navigator screenOptions={{headerShown: false}}>
-                <AppStack.Screen name="SignIn" component={SignIn}/>
-                <AppStack.Screen name="SignUp" component={SignUp}/>
+            <AppStack.Navigator screenOptions={{ headerShown: false }}>
+                <AppStack.Screen name="SignIn" component={SignIn} />
+                <AppStack.Screen name="SignUp" component={SignUp} />
             </AppStack.Navigator>
         </NavigationContainer>
     );
