@@ -8,7 +8,6 @@ export default StyleSheet.create({
         backgroundColor: '#fff'
     },
     title:{
-        width: 150,
         textAlign: 'center',
         fontSize: 56,
         fontWeight: 'bold',
@@ -19,28 +18,29 @@ export default StyleSheet.create({
     },
     input:{
         width: 240,
-        borderWidth: 3,
         borderColor: '#c0c0c0',
-        backgroundColor: '#e1e1e1',
+        borderBottomWidth:2,
     },
     inputContainer:{
-        padding:16,
+        padding:10,
     },
     formContainer:{
         marginTop: 20,
+        alignItems: 'flex-start',
     },
     buttonSubmit:{
         flexDirection: 'row',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         padding:16,
     },
     textButton:{
         fontWeight: 'bold',
         fontSize: 18,
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
     },
     optionsContainer:{
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        marginRight: 100,
     },
 
 

@@ -7,32 +7,31 @@ import axios from 'axios';
 import Style from './style';
 
 
-export default function SignIn() {
+export default function Profile() {
     const navigation = useNavigation();
 
     function navigateToSignIn() {
         navigation.navigate('SignIn')
     }
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [cellphone, setCellphone] = useState('');
+    const [name, setName] = useState('tha');
+    const [email, setEmail] = useState('tms@gmail.com');
+    const [password, setPassword] = useState('t272egwj');
+    const [cellphone, setCellphone] = useState('086999135090');
 
     async function handleSubmit() {
-        if (confirmPassword==password) {
+        if (confirmPassword == password) {
             const response = await axios.post('http://191.7.210.2:25565/users', { name, email, password });
             if (response.data.length > 0)
                 alert('Cadastrado com sucesso!, Id: ' + response.data[0])
             navigateToSignIn();
-        }else{
-            {alert('Senhas Diferentes')}
+        } else {
+            { alert('Senhas Diferentes') }
         }
     }
     return (
         <View style={Style.container}>
-            <Text style={Style.title}>Cadastro</Text>
+            <Text style={Style.title}>Seus Dados</Text>
             <View style={Style.formContainer}>
                 <View style={Style.inputContainer}>
                     <Text style={Style.inputText}>Nome Completo</Text>
@@ -56,13 +55,6 @@ export default function SignIn() {
                         onChangeText={e => { setPassword(e) }} />
                 </View>
                 <View style={Style.inputContainer}>
-                    <Text style={Style.inputText}>Confirmar Senha</Text>
-                    <TextInput
-                        style={Style.input}
-                        value={confirmPassword}
-                        onChangeText={e => { setConfirmPassword(e) }} />
-                </View>
-                <View style={Style.inputContainer}>
                     <Text style={Style.inputText}>Telefone</Text>
                     <TextInput
                         style={Style.input}
@@ -73,12 +65,12 @@ export default function SignIn() {
             <View style={Style.optionsContainer}>
                 <TouchableOpacity onPress={handleSubmit}>
                     <View style={Style.buttonSubmit}>
-                        <Text style={Style.textButton}>Criar Conta</Text>
+                        <Text style={Style.textButton}>Confirmar Dados</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={navigateToSignIn}>
                     <View style={Style.buttonSubmit}>
-                        <Text style={Style.textButton}>Voltar à Tela Inicial</Text>
+                        <Text style={Style.textButton}>Corrigir Dados</Text>
                     </View>
                 </TouchableOpacity>
 

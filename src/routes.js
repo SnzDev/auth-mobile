@@ -6,12 +6,14 @@ const AppStack = createStackNavigator();
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
 
 
 export default function Routes() {
     return (
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{ headerShown: false }}>
+                <AppStack.Screen name="Profile" component={Profile} />
                 <AppStack.Screen name="SignIn" component={SignIn} />
                 <AppStack.Screen name="SignUp" component={SignUp} />
             </AppStack.Navigator>
